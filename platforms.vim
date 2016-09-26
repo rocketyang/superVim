@@ -11,7 +11,7 @@ if has('win32') || has('win64')
 
   " Set height and width on Windows
   set lines=60
-  set columns=120
+  set columns=220
 
   " Disable quickfixsigns on Windows due to incredible slowdown.
   let g:loaded_quickfixsigns=1
@@ -23,7 +23,7 @@ elseif has('gui_macvim')
 
   " Custom Source Code font for Powerline
   " From: https://github.com/Lokaltog/powerline-fonts
-  set guifont=Source\ Code\ Pro\ for\ Powerline:h12
+  "set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
   " Hide Toolbar in MacVim
   if has("gui_running")

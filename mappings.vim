@@ -21,11 +21,11 @@ nnoremap <leader>sc <nop>
 " ---------------
 
 " Use ; for : in normal and visual mode, less keystrokes
-nnoremap ; :
-vnoremap ; :
+" nnoremap ; :
+" vnoremap ; :
 
 " Yank entire buffer with gy
-nnoremap gy :0,$ y<cr>
+" nnoremap gy :0,$ y<cr>
 
 " Select entire buffer
 nnoremap vy ggVG
@@ -39,22 +39,22 @@ noremap H ^
 noremap L $
 
 " Create newlines without entering insert mode
-nnoremap go o<Esc>k
-nnoremap gO O<Esc>j
+" nnoremap go o<Esc>k
+" nnoremap gO O<Esc>j
 
 " remap U to <C-r> for easier redo
 " from http://vimbits.com/bits/356
-nnoremap U <C-r>
+" nnoremap U <C-r>
 
 " Swap implementations of ` and ' jump to markers
 " By default, ' jumps to the marked line, ` jumps to the marked line and
 " column, so swap them
-nnoremap ' `
-nnoremap ` '
+" nnoremap ' `
+" nnoremap ` '
 
 " Use very magic (Perl-like) regex style
-nnoremap / /\v
-vnoremap / /\v
+"nnoremap / /\v
+"vnoremap / /\v
 
 " Don't move on *
 nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(stay_star_view)<cr>
@@ -62,42 +62,42 @@ nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(st
 " ---------------
 " Window Movement
 " ---------------
-nnoremap <silent> gh :WriteBufferIfNecessary<CR>:wincmd h<CR>
-nnoremap <silent> gj :WriteBufferIfNecessary<CR>:wincmd j<CR>
-nnoremap <silent> gk :WriteBufferIfNecessary<CR>:wincmd k<CR>
-nnoremap <silent> <M-k> :wincmd k<CR>
-nnoremap <silent> gl :WriteBufferIfNecessary<CR>:wincmd l<CR>
+" nnoremap <silent> gh :WriteBufferIfNecessary<CR>:wincmd h<CR>
+" nnoremap <silent> gj :WriteBufferIfNecessary<CR>:wincmd j<CR>
+" nnoremap <silent> gk :WriteBufferIfNecessary<CR>:wincmd k<CR>
+" nnoremap <silent> <M-k> :wincmd k<CR>
+" nnoremap <silent> gl :WriteBufferIfNecessary<CR>:wincmd l<CR>
 
 "   4 Window Splits
 "
 "   -----------------
 "   g1 | g2 | g3 | g4
 "   -----------------
-nnoremap <silent> g1 :WriteBufferIfNecessary<CR>:wincmd t<CR>
-nnoremap <silent> g2 :WriteBufferIfNecessary<CR>:wincmd t<bar>:wincmd l<CR>
-nnoremap <silent> g3 :WriteBufferIfNecessary<CR>:wincmd t<bar>:wincmd l<bar>
-      \:wincmd l<CR>
-nnoremap <silent> g4 :WriteBufferIfNecessary<CR>:wincmd b<CR>
-
-" Previous Window
-nnoremap <silent> gp :wincmd p<CR>
-" Equal Size Windows
-nnoremap <silent> g= :wincmd =<CR>
-" Swap Windows
-nnoremap <silent> gx :wincmd x<CR>
+" nnoremap <silent> g1 :WriteBufferIfNecessary<CR>:wincmd t<CR>
+" nnoremap <silent> g2 :WriteBufferIfNecessary<CR>:wincmd t<bar>:wincmd l<CR>
+" nnoremap <silent> g3 :WriteBufferIfNecessary<CR>:wincmd t<bar>:wincmd l<bar>
+"       \:wincmd l<CR>
+" nnoremap <silent> g4 :WriteBufferIfNecessary<CR>:wincmd b<CR>
+"
+" " Previous Window
+" nnoremap <silent> gp :wincmd p<CR>
+" " Equal Size Windows
+" nnoremap <silent> g= :wincmd =<CR>
+" " Swap Windows
+" nnoremap <silent> gx :wincmd x<CR>
 
 " ---------------
 " Modifer Mappings
 " ---------------
 
 " Make line completion easier.
-inoremap <C-l> <C-x><C-l>
+" inoremap <C-l> <C-x><C-l>
 
 " Scroll larger amounts with C-j / C-k
-nnoremap <C-j> 15gjzz
-nnoremap <C-k> 15gkzz
-vnoremap <C-j> 15gjzz
-vnoremap <C-k> 15gkzz
+" nnoremap <C-j> 15gjzz
+" nnoremap <C-k> 15gkzz
+" vnoremap <C-j> 15gjzz
+" vnoremap <C-k> 15gkzz
 
 " ---------------
 " Insert Mode Mappings
@@ -114,55 +114,55 @@ inoremap jK <Esc>
 " ---------------
 
 " Clear search
-noremap <silent><leader>/ :nohls<CR>
-
-" Highlight search word under cursor without jumping to next
-nnoremap <leader>h *<C-O>
-
-" Toggle spelling mode with ,s
-nnoremap <silent> <leader>s :set spell!<CR>
-
-" Quickly switch to last buffer
-nnoremap <leader>, :e#<CR>
-
-" Underline the current line with '-'
-nnoremap <silent> <leader>ul :t.\|s/./-/\|:nohls<cr>
-
-" Underline the current line with '='
-nnoremap <silent> <leader>uul :t.\|s/./=/\|:nohls<cr>
-
-" Surround the commented line with lines.
+" noremap <silent><leader>/ :nohls<CR>
 "
-" Example:
-"          # Test 123
-"          becomes
-"          # --------
-"          # Test 123
-"          # --------
-nnoremap <silent> <leader>cul :normal "lyy"lpwvLr-^"lyyk"lP<cr>
-
-" Format the entire file
-nnoremap <leader>fef mx=ggG='x
+" " Highlight search word under cursor without jumping to next
+" nnoremap <leader>h *<C-O>
+"
+" " Toggle spelling mode with ,s
+" nnoremap <silent> <leader>s :set spell!<CR>
+"
+" " Quickly switch to last buffer
+" nnoremap <leader>, :e#<CR>
+"
+" " Underline the current line with '-'
+" nnoremap <silent> <leader>ul :t.\|s/./-/\|:nohls<cr>
+"
+" " Underline the current line with '='
+" nnoremap <silent> <leader>uul :t.\|s/./=/\|:nohls<cr>
+"
+" " Surround the commented line with lines.
+" "
+" " Example:
+" "          # Test 123
+" "          becomes
+" "          # --------
+" "          # Test 123
+" "          # --------
+" nnoremap <silent> <leader>cul :normal "lyy"lpwvLr-^"lyyk"lP<cr>
+"
+" " Format the entire file
+" nnoremap <leader>fef mx=ggG='x
 
 " Format a json file with Python's built in json.tool.
 " from https://github.com/spf13/spf13-vim/blob/3.0/.vimrc#L390
-nnoremap <leader>jt <Esc>:%!underscore print<CR><Esc>:set filetype=json<CR>
-nnoremap <leader>jts <Esc>:%!underscore print --strict<CR><Esc>:set filetype=json<CR>
+"nnoremap <leader>jt <Esc>:%!underscore print<CR><Esc>:set filetype=json<CR>
+"nnoremap <leader>jts <Esc>:%!underscore print --strict<CR><Esc>:set filetype=json<CR>
 
 " Split window vertically or horizontally *and* switch to the new split!
-nnoremap <silent> <leader>hs :split<Bar>:wincmd j<CR>
-nnoremap <silent> <leader>vs :vsplit<Bar>:wincmd l<CR>
-
-" Close the current window
-nnoremap <silent> <m-w> :close<CR>
+" nnoremap <silent> <leader>hs :split<Bar>:wincmd j<CR>
+" nnoremap <silent> <leader>vs :vsplit<Bar>:wincmd l<CR>
+"
+" " Close the current window
+" nnoremap <silent> <m-w> :close<CR>
 
 " ---------------
 " Typo Fixes
 " ---------------
 
-noremap <F1> <Esc>
-inoremap <F1> <Esc>
-cnoremap w' w<CR>
+" noremap <F1> <Esc>
+" inoremap <F1> <Esc>
+" cnoremap w' w<CR>
 
 " Disable the ever-annoying Ex mode shortcut key. Type visual my ass. Instead,
 " make Q repeat the last macro instead. *hat tip* http://vimbits.com/bits/263
@@ -173,27 +173,27 @@ nnoremap K k
 vnoremap K k
 
 " Toggle paste mode with F5
-nnoremap <silent> <F5> :set paste!<CR>
+" nnoremap <silent> <F5> :set paste!<CR>
 
 " Insert date
 iabbrev ddate <C-R>=strftime("%Y-%m-%d")<CR>
 
 " Insert a console statements
-iabbrev clg console.log
-iabbrev cld console.debug
+" iabbrev clg console.log
+" iabbrev cld console.debug
 
 " copy current file name (relative/absolute) to system clipboard
 " from http://stackoverflow.com/a/17096082/22423
-if has("mac") || has("gui_macvim") || has("gui_mac")
-  " relative path  (src/foo.txt)
-  nnoremap <silent> <leader>yp :let @*=expand("%")<CR>
-
-  " absolute path  (/something/src/foo.txt)
-  nnoremap <silent> <leader>yP :let @*=expand("%:p")<CR>
-
-  " filename       (foo.txt)
-  nnoremap <silent> <leader>yf :let @*=expand("%:t")<CR>
-
-  " directory name (/something/src)
-  nnoremap <silent> <leader>yd :let @*=expand("%:p:h")<CR>
-endif
+" if has("mac") || has("gui_macvim") || has("gui_mac")
+"   " relative path  (src/foo.txt)
+"   nnoremap <silent> <leader>yp :let @*=expand("%")<CR>
+"
+"   " absolute path  (/something/src/foo.txt)
+"   nnoremap <silent> <leader>yP :let @*=expand("%:p")<CR>
+"
+"   " filename       (foo.txt)
+"   nnoremap <silent> <leader>yf :let @*=expand("%:t")<CR>
+"
+"   " directory name (/something/src)
+"   nnoremap <silent> <leader>yd :let @*=expand("%:p:h")<CR>
+" endif
